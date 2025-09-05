@@ -651,6 +651,1078 @@
                     <p class="balance-subtext">للسحب المباشر يجب:</p>
                     <ul style="list-style: none; margin-top: 15px;">
                         <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> تسديد المديونية بالكامل</li>
+                        <li style        }
+        
+        /* البطاقة الشخصية */
+        .profile-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(var(--blur-intensity));
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            padding: 3px;
+            background: var(--dark);
+            box-shadow: 0 5px 15px rgba(126, 34, 206, 0.3);
+        }
+        
+        .profile-info {
+            margin-right: 20px;
+        }
+        
+        .profile-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .profile-details {
+            color: var(--gray);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* بطاقات المعلومات */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(var(--blur-intensity));
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--gray);
+        }
+        
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(126, 34, 206, 0.2);
+            color: var(--primary);
+            font-size: 20px;
+        }
+        
+        .balance-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 10px;
+        }
+        
+        .balance-subtext {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .debt-amount {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--danger);
+            margin-bottom: 10px;
+        }
+        
+        .service-status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--success);
+        }
+        
+        /* قسم السحب */
+        .withdraw-section {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(var(--blur-intensity));
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .warning-box {
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .warning-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--warning);
+        }
+        
+        .upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary);
+        }
+        
+        .upload-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+        }
+        
+        .btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(126, 34, 206, 0.4);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(to right, var(--danger), #dc2626);
+        }
+        
+        /* الحركات والتفاعلات */
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(-50px, 50px) scale(1.1);
+            }
+            50% {
+                transform: translate(50px, 100px) scale(0.9);
+            }
+            75% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* صفحة تسجيل الدخول */
+        .login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .login-container {
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(var(--blur-intensity));
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            animation: scaleIn 0.5s ease forwards;
+        }
+        
+        @keyframes scaleIn {
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-logo {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .login-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #c084fc, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .login-subtitle {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--gray);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.7);
+            color: var(--light);
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            cursor: pointer;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(126, 34, 206, 0.4);
+        }
+        
+        .crypto-methods {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .crypto-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .crypto-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .crypto-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .contact-agent {
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .contact-text {
+            color: var(--warning);
+            font-size: 14px;
+        }
+        
+        /* التكيف مع الشاشات المختلفة */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-info {
+                margin-right: 0;
+                margin-top: 15px;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .crypto-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- تأثيرات الخلفية -->
+    <div class="bg-blob"></div>
+    <div class="bg-blob"></div>
+    <div class="bg-blob"></div>
+    
+    <!-- صفحة تسجيل الدخول -->
+    <div id="loginOverlay" class="login-overlay">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="login-logo">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="login-title">SCRIPT ARAB</h2>
+                <p class="login-subtitle">يجب تسجيل الدخول للوصول إلى لوحة التحكم</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">رقم الهاتف</label>
+                    <input type="text" class="form-input" id="phone" placeholder="أدخل رقم الهاتف" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">كلمة المرور</label>
+                    <div class="password-container">
+                        <input type="password" class="form-input" id="password" placeholder="أدخل كلمة المرور" required>
+                        <span class="toggle-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn">تسجيل الدخول</button>
+                
+                <div id="loginError" style="color: var(--danger); text-align: center; margin-top: 15px; display: none;">
+                    <i class="fas fa-exclamation-circle"></i> رقم الهاتف أو كلمة المرور غير صحيحة
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="container" id="mainContent" class="hidden">
+        <!-- الهيدر -->
+        <header class="fade-in">
+            <div class="logo">
+                <i class="fas fa-code logo-icon"></i>
+                <h1>SCRIPT ARAB</h1>
+            </div>
+            <div class="user-actions">
+                <button class="btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</button>
+            </div>
+        </header>
+        
+        <!-- البطاقة الشخصية -->
+        <div class="profile-card fade-in">
+            <div class="profile-header">
+                <img src="https://ui-avatars.com/api/?name=مازن+جمال&background=7e22ce&color=fff&size=100" alt="صورة الملف الشخصي" class="profile-img">
+                <div class="profile-info">
+                    <h2 class="profile-name">مازن جمال</h2>
+                    <p class="profile-details">
+                        <i class="fas fa-phone"></i>
+                        <span>+201034178100</span>
+                    </p>
+                    <p class="profile-details">
+                        <i class="fas fa-flag"></i>
+                        <span>الجنسية: مصري</span>
+                    </p>
+                    <p class="profile-details">
+                        <i class="fas fa-crown"></i>
+                        <span>الخدمة: تحصيل الأرباح بدون أتعاب</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- بطاقات المعلومات -->
+        <div class="cards-container">
+            <div class="card fade-in" style="animation-delay: 0.2s;">
+                <div class="card-header">
+                    <h3 class="card-title">رصيد حسابك الحالي</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="balance-amount">8,094,050 ج.م</p>
+                    <p class="balance-subtext">الرصيد المتاح للسحب بعد تسديد المديونية</p>
+                </div>
+            </div>
+            
+            <div class="card fade-in" style="animation-delay: 0.4s;">
+                <div class="card-header">
+                    <h3 class="card-title">الخدمة والمديونية</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="debt-amount">5,000 ج.م</p>
+                    <p class="balance-subtext">رسوم الخدمة المديونية (تأخير شهرين)</p>
+                    <p class="balance-subtext">كل شهر: 2,500 ج.م</p>
+                    <br>
+                    <span class="service-status">نشط - تحصيل الأرباح بدون أتعاب</span>
+                </div>
+            </div>
+            
+            <div class="card fade-in" style="animation-delay: 0.6s;">
+                <div class="card-header">
+                    <h3 class="card-title">حالة السحب</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="balance-subtext">للسحب المباشر يجب:</p>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> تسديد المديونية بالكامل</li>
+                        <li style            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            padding: 3px;
+            background: var(--dark);
+            box-shadow: 0 5px 15px rgba(126, 34, 206, 0.3);
+        }
+        
+        .profile-info {
+            margin-right: 20px;
+        }
+        
+        .profile-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .profile-details {
+            color: var(--gray);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* بطاقات المعلومات */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(var(--blur-intensity));
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--gray);
+        }
+        
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(126, 34, 206, 0.2);
+            color: var(--primary);
+            font-size: 20px;
+        }
+        
+        .balance-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 10px;
+        }
+        
+        .balance-subtext {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .debt-amount {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--danger);
+            margin-bottom: 10px;
+        }
+        
+        .service-status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--success);
+        }
+        
+        /* قسم السحب */
+        .withdraw-section {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(var(--blur-intensity));
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .warning-box {
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .warning-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--warning);
+        }
+        
+        .upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary);
+        }
+        
+        .upload-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+        }
+        
+        .btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(126, 34, 206, 0.4);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(to right, var(--danger), #dc2626);
+        }
+        
+        /* الحركات والتفاعلات */
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(-50px, 50px) scale(1.1);
+            }
+            50% {
+                transform: translate(50px, 100px) scale(0.9);
+            }
+            75% {
+                transform: translate(50px, -50px) scale(1.1);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* صفحة تسجيل الدخول */
+        .login-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .login-container {
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(var(--blur-intensity));
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            animation: scaleIn 0.5s ease forwards;
+        }
+        
+        @keyframes scaleIn {
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-logo {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .login-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #c084fc, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .login-subtitle {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--gray);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.7);
+            color: var(--light);
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            cursor: pointer;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(126, 34, 206, 0.4);
+        }
+        
+        .crypto-methods {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .crypto-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .crypto-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .crypto-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        .contact-agent {
+            background: rgba(245, 158, 11, 0.2);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .contact-text {
+            color: var(--warning);
+            font-size: 14px;
+        }
+        
+        /* التكيف مع الشاشات المختلفة */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-info {
+                margin-right: 0;
+                margin-top: 15px;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .crypto-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- تأثيرات الخلفية -->
+    <div class="bg-blob"></div>
+    <div class="bg-blob"></div>
+    <div class="bg-blob"></div>
+    
+    <!-- صفحة تسجيل الدخول -->
+    <div id="loginOverlay" class="login-overlay">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="login-logo">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="login-title">SCRIPT ARAB</h2>
+                <p class="login-subtitle">يجب تسجيل الدخول للوصول إلى لوحة التحكم</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">رقم الهاتف</label>
+                    <input type="text" class="form-input" id="phone" placeholder="أدخل رقم الهاتف" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">كلمة المرور</label>
+                    <div class="password-container">
+                        <input type="password" class="form-input" id="password" placeholder="أدخل كلمة المرور" required>
+                        <span class="toggle-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn">تسجيل الدخول</button>
+                
+                <div id="loginError" style="color: var(--danger); text-align: center; margin-top: 15px; display: none;">
+                    <i class="fas fa-exclamation-circle"></i> رقم الهاتف أو كلمة المرور غير صحيحة
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="container" id="mainContent" class="hidden">
+        <!-- الهيدر -->
+        <header class="fade-in">
+            <div class="logo">
+                <i class="fas fa-code logo-icon"></i>
+                <h1>SCRIPT ARAB</h1>
+            </div>
+            <div class="user-actions">
+                <button class="btn" onclick="logout()"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</button>
+            </div>
+        </header>
+        
+        <!-- البطاقة الشخصية -->
+        <div class="profile-card fade-in">
+            <div class="profile-header">
+                <img src="https://ui-avatars.com/api/?name=مازن+جمال&background=7e22ce&color=fff&size=100" alt="صورة الملف الشخصي" class="profile-img">
+                <div class="profile-info">
+                    <h2 class="profile-name">مازن جمال</h2>
+                    <p class="profile-details">
+                        <i class="fas fa-phone"></i>
+                        <span>+201034178100</span>
+                    </p>
+                    <p class="profile-details">
+                        <i class="fas fa-flag"></i>
+                        <span>الجنسية: مصري</span>
+                    </p>
+                    <p class="profile-details">
+                        <i class="fas fa-crown"></i>
+                        <span>الخدمة: تحصيل الأرباح بدون أتعاب</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- بطاقات المعلومات -->
+        <div class="cards-container">
+            <div class="card fade-in" style="animation-delay: 0.2s;">
+                <div class="card-header">
+                    <h3 class="card-title">رصيد حسابك الحالي</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="balance-amount">8,094,050 ج.م</p>
+                    <p class="balance-subtext">الرصيد المتاح للسحب بعد تسديد المديونية</p>
+                </div>
+            </div>
+            
+            <div class="card fade-in" style="animation-delay: 0.4s;">
+                <div class="card-header">
+                    <h3 class="card-title">الخدمة والمديونية</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="debt-amount">5,000 ج.م</p>
+                    <p class="balance-subtext">رسوم الخدمة المديونية (تأخير شهرين)</p>
+                    <p class="balance-subtext">كل شهر: 2,500 ج.م</p>
+                    <br>
+                    <span class="service-status">نشط - تحصيل الأرباح بدون أتعاب</span>
+                </div>
+            </div>
+            
+            <div class="card fade-in" style="animation-delay: 0.6s;">
+                <div class="card-header">
+                    <h3 class="card-title">حالة السحب</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="balance-subtext">للسحب المباشر يجب:</p>
+                    <ul style="list-style: none; margin-top: 15px;">
+                        <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> تسديد المديونية بالكامل</li>
                         <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--success);"></i> إرفاق صورة البطاقة الشخصية (الوجهين)</li>
                         <li><i class="fas fa-check-circle" style="color: var(--success);"></i> إرفاق صورة شخصية حديثة</li>
                     </ul>
