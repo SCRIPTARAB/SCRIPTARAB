@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهادة دولية - SCRIPT ARAB</title>
+    <style>
+        @font-face {
+            font-family: 'Tajawal';
+            src: url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .certificate {
+            width: 100%;
+            max-width: 1000px;
+            background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+            border: 20px solid #0d3b66;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .border-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 15px, rgba(13, 59, 102, 0.05) 15px, rgba(13, 59, 102, 0.05) 16px),
+                repeating-linear-gradient(90deg, transparent, transparent 15px, rgba(13, 59, 102, 0.05) 15px, rgba(13, 59, 102, 0.05) 16px);
+            pointer-events: none;
+        }
+        
+        .gold-border {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid #d4af37;
+            pointer-events: none;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        .header h1 {
+            color: #0d3b66;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header h2 {
+            color: #d4af37;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: -11px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #d4af37;
+            border-radius: 50%;
+        }
+        
+        .content {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .recipient {
+            font-size: 28px;
+            color: #0d3b66;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-decoration: underline;
+            text-underline-offset: 8px;
+            text-decoration-color: #d4af37;
+        }
+        
+        .message {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .achievement {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0d3b66;
+            margin-bottom: 10px;
+        }
+        
+        .details {
+            background: #f0f5ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-right: 4px solid #0d3b66;
+            margin: 25px 0;
+        }
+        
+        .details h3 {
+            color: #0d3b66;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .details ul {
+            list-style: none;
+            text-align: right;
+        }
+        
+        .details li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-right: 20px;
+        }
+        
+        .details li::before {
+            content: "•";
+            color: #d4af37;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        
+        .signatures {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .signature {
+            text-align: center;
+            margin: 15px;
+            position: relative;
+        }
+        
+        .stamp {
+            width: 120px;
+            height: 120px;
+            border: 2px solid #d4af37;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f9f9f9, #fff);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stamp::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 8px solid rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+        }
+        
+        .stamp-content {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #0d3b66;
+            z-index: 2;
+            padding: 10px;
+        }
+        
+        .signature p {
+            margin-top: 10px;
+            font-weight: 500;
+            color: #0d3b66;
+        }
+        
+        .flags-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .flags-title {
+            font-size: 18px;
+            color: #0d3b66;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .flags-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .flag {
+            width: 60px;
+            height: 40px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ddd;
+        }
+        
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 80px;
+            font-weight: 800;
+            color: rgba(13, 59, 102, 0.05);
+            pointer-events: none;
+            z-index: -1;
+            white-space: nowrap;
+        }
+        
+        .certificate-id {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        
+        .date {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 14px;
+            color: #0d3b66;
+        }
+        
+        @media (max-width: 768px) {
+            .certificate {
+                padding: 20px;
+                border-width: 10px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+            
+            .header h2 {
+                font-size: 20px;
+            }
+            
+            .recipient {
+                font-size: 22px;
+            }
+            
+            .message {
+                font-size: 16px;
+            }
+            
+            .stamp {
+                width: 90px;
+                height: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate">
+        <div class="border-pattern"></div>
+        <div class="gold-border"></div>
+        <div class="watermark">SCRIPT ARAB</div>
+        
+        <div class="header">
+            <h1>شهادة اعتماد دولية</h1>
+            <h2>في التحليل المالي والسوق الرقمي وتطبيقات الذكاء الاصطناعي المتقدمة</h2>
+        </div>
+        
+        <div class="content">
+            <div class="recipient">منظومة SCRIPT ARAB</div>
+            
+            <div class="message">
+                تمنح هذه الشهادة تقديراً للتميز والريادة في مجال التحليل المالي المتقدم،
+                وتحليل الأسواق الرقمية، وتطبيقات الذكاء الاصطناعي فائقة التطور،
+                والتي أثبتت فيها المنظومة كفاءة ومهارة استثنائية.
+            </div>
+            
+            <div class="achievement">شهادة التميز والريادة في التقنيات المتقدمة</div>
+            
+            <div class="details">
+                <h3>مجالات التميز المعتمدة:</h3>
+                <ul>
+                    <li>التحليل المالي المتقدم وتوقع الأسواق المالية</li>
+                    <li>تحليل السوق الرقمي واستراتيجيات النمو</li>
+                    <li>تطبيقات الذكاء الاصطناعي في التحليلات التنبؤية</li>
+                    <li>نمذجة البيانات الضخمة وتحليل السلوك</li>
+                    <li>أنظمة التوصية الذكية والتعلم الآلي المتقدم</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="signatures">
+            <div class="signature">
+                <div class="stamp">
+                    <div class="stamp-content">الاتحاد الأوروبي<br>للتقنية المتقدمة</div>
+                </div>
+                <p>الاتحاد الأوروبي للتحليل المالي</p>
+            </div>
+            
+            <div class="signature">
+                <div class="stamp">
+                    <div class="stamp-content">منظمة الأمريكتين<br>للذكاء الاصطناعي</div>
+                </div>
+                <p>اتحاد الأمريكتين للتقنية</p>
+            </div>
+            
+            <div class="signature">
+                <div class="stamp">
+                    <div class="stamp-content">المنظمة العربية<br>للتحليل الرقمي</div>
+                </div>
+                <p>الجامعة العربية للتقنية</p>
+            </div>
+        </div>
+        
+        <div class="flags-section">
+            <div class="flags-title">الدول والمنظمات الداعمة لهذه الشهادة:</div>
+            <div class="flags-container">
+                <div class="flag" style="background: linear-gradient(to bottom, #ce1126 33%, white 33%, white 66%, #007a3d 66%)"></div> <!-- Italy -->
+                <div class="flag" style="background: linear-gradient(to right, #0055a4 33%, white 33%, white 66%, #ef4135 66%)"></div> <!-- France -->
+                <div class="flag" style="background: linear-gradient(to bottom, #ffce00 50%, #003894 50%)"></div> <!-- UAE -->
+                <div class="flag" style="background: linear-gradient(to bottom, #ce1126 33%, white 33%, white 66%, #000000 66%)"></div> <!-- Germany -->
+                <div class="flag" style="background: linear-gradient(to bottom, #c1272d, #c1272d)"></div> <!-- Morocco -->
+                <div class="flag" style="background: linear-gradient(to right, #007a3d 33%, white 33%, white 66%, #ce1126 66%)"></div> <!-- Saudi Arabia -->
+                <div class="flag" style="background: linear-gradient(to bottom, #ed2939, white, #009739)"></div> <!-- Bulgaria -->
+                <div class="flag" style="background: linear-gradient(to right, #00247d, #00247d) no-repeat, linear-gradient(to right, #cf142b, #cf142b) no-repeat right, #fff"></div> <!-- UK -->
+                <div class="flag" style="background: linear-gradient(to bottom, #c0101e, white, #c0101e)"></div> <!-- Austria -->
+                <div class="flag" style="background: linear-gradient(to bottom, #da121a, white, #007e3a)"></div> <!-- Oman -->
+            </div>
+        </div>
+        
+        <div class="certificate-id">رقم الوثيقة: SA-78943-2023</div>
+        <div class="date">صدرت في: ١٢ ربيع الأول ١٤٤٥ هـ</div>
+    </div>
+</body>
+</html>
